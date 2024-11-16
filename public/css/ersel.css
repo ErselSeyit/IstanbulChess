@@ -1,0 +1,685 @@
+/*bu satır onemli*/
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; overflow: hidden;}
+html.touch body {
+     overflow:hidden;
+}
+body{margin:0; overflow: hidden;}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block;vertical-align:baseline}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+a{-webkit-tap-highlight-color:transparent;background-color:transparent}
+a:active,a:hover{outline:0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+mark{background:#ff0;color:#000}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-0.5em} sub{bottom:-0.25em}
+img{border:0} svg:not(:root){overflow:hidden} figure{margin:1em 40px}
+hr{-moz-box-sizing:content-box;box-sizing:content-box}
+pre{overflow:auto}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
+button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}
+button{overflow:visible}button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+input[type=checkbox],input[type=radio]{padding:0}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}
+input[type=search]{box-sizing:content-box;-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;appearance:textfield}
+input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}
+legend{border:0;padding:0}
+textarea{overflow-y:scroll}
+optgroup{font-weight:bold}
+
+
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+hr{height:0;border:0;border-top:1px solid #eee;margin:20px 0}
+img{margin-bottom:-5px}
+a{color:inherit}
+table{border-collapse:collapse;border-spacing:0;width:100%;display:table}
+table,th,td{border:none}
+.ersel-table-all{border:1px solid #ccc}
+.ersel-bordered tr,.ersel-table-all tr{border-bottom:1px solid grey}
+.ersel-striped tbody tr:nth-child(even){background-color:silver}
+.ersel-table-all tr:nth-child(odd){background-color:silver}
+.ersel-table-all tr:nth-child(even){background-color:silver}
+.ersel-hoverable tbody tr{transition:background-color .25s ease}
+.ersel-hoverable tbody tr:hover{background-color:#f2f2f2}
+.ersel-centered tr th,.ersel-centered tr td{text-align:center}
+.ersel-table td,.ersel-table th,.ersel-table-all td,.ersel-table-all th{padding:4px 6px;display:table-cell;text-align:left;vertical-align:middle}
+.ersel-table th:first-child,.ersel-table td:first-child,.ersel-table-all th:first-child,.ersel-table-all td:first-child{padding-left:5px}
+.ersel-button{border:none;display:inline-block;outline:0;padding:6px 16px;vertical-align:middle;overflow:hidden;text-decoration:none !important;color:#fff;background-color:#000;text-align:center;transition:.2s ease-out;cursor:pointer;white-space:nowrap}
+.ersel-button.ersel-disabled,.ersel-button-floating.ersel-disabled,.ersel-button:disabled,.ersel-button-floating:disabled,.ersel-button-floating-genis.ersel-disabled,.ersel-button-floating-genis:disabled{cursor:not-allowed;opacity:0.3;}
+.ersel-button.ersel-disabled *,.ersel-button-floating.ersel-disabled *,.ersel-button:disabled *,.ersel-button-floating:disabled *{pointer-events:none}
+.ersel-button.ersel-disabled:hover,.ersel-button:disabled:hover,.ersel-button-floating.ersel-disabled:hover,.ersel-button-floating:disabled:hover,
+.ersel-button-floating-genis.ersel-disabled:hover,.ersel-button-floating-genis:disabled:hover{box-shadow:none}
+.ersel-button:hover,.ersel-button-floating:hover,.ersel-button-floating-genis:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.ersel-button-floating,.ersel-button-floating-genis{display:inline-block;text-align:center;color:#fff;background-color:#000;position:relative;overflow:hidden;z-index:1;padding:0;border-radius:50%;transition:.3s;cursor:pointer;font-size:24px}
+.ersel-button-floating{width:40px;height:40px;line-height:40px}
+.ersel-button-floating-genis{width:56px;height:56px;line-height:56px}
+.ersel-button-grup .ersel-button{float:left;}
+.ersel-button.ersel-dalga{position:relative}
+.ersel-dalga:after{content:"";background:#90EE90;display:block;position:absolute;padding-top:300%;padding-left:350%;margin-left:-20px!important;margin-top:-120%;opacity:0;transition:all 0.8s}
+.ersel-dalga:active:after{padding:0;margin:0;opacity:1;transition:0s}
+.ersel-badge,.ersel-tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;font-weight:bold;text-align:center}
+.ersel-badge{border-radius:50%}
+.ersel-blockquote{margin:0;padding-left:16px;border-left:5px solid #ddd;font-style:italic}
+ul.ersel-ul{list-style-type:none;padding:0;margin:0;}
+ul.ersel-ul li{padding:6px 16px;border-bottom:1px solid #e0e0e0}
+ul.ersel-ul li:last-child{border-bottom:none}
+.ersel-image,.ersel-ipucu{position:relative}
+img.ersel-image,.ersel-image img{max-width:100%;height:auto}
+.ersel-image .ersel-title{position:absolute;bottom:8px;left:16px;color:#fff;font-size:20px}
+.ersel-fluid{max-width:100%;height:auto}
+.ersel-ipucu .ersel-yazi{display:none}
+.ersel-ipucu:hover .ersel-yazi{display:inline-block}
+.ersel-yatay-menu{padding:8px 8px}
+.ersel-yatay-menu a,.ersel-dikey-menu a,.ersel-acilan-menu a{text-decoration:none !important}
+.ersel-yatay-menu a{padding:0 8px;border-bottom:3px solid transparent;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;-o-transition:all 0.3s ease;transition:all 0.3s ease;}
+.ersel-yatay-menu a:hover{border-bottom:3px solid #fff}
+.ersel-dikey-menu{height:100%;width:300px;position:fixed !important;z-index:1;overflow:auto}
+.ersel-acilan-menu,.ersel-kapanan-menu{color:inherit}
+.ersel-acilan-menu:hover,.ersel-kapanan-menu:hover{cursor:pointer;opacity:0.8}
+.ersel-dikey-menu a{padding:4px 16px}
+.ersel-dikey-menu a:hover,.ersel-dikey-menu a:focus{background-color:#ccc}
+.ersel-dikey-menu a,.ersel-acilan-menu a{display:block;transition:.3s}
+.ersel-acilan-menu a:hover{text-decoration:underline !important}
+.ersel-tab div{display:none}
+.ersel-tab div:target{display:block}
+.ersel-modal{z-index:1;display:none;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+.ersel-modal:target{display:block}
+.ersel-modal-icerik{margin:auto;background-color:#f3f3f3;position:relative;padding:0;outline:0;border:1px #555 solid;width:400px}.ersel-closebtn{text-decoration:none;float:right;font-size:24px;font-weight:bold;color:inherit}
+.ersel-openbtn:hover,.ersel-openbtn:focus{color:#f3f3f3;text-decoration:none;cursor:pointer}
+.ersel-closebtn:hover,.ersel-closebtn:focus{color:#000;text-decoration:none;cursor:pointer}
+.ersel-pagination{display:inline-block;padding:0;margin:0;}
+.ersel-pagination li{display: inline;}
+.ersel-pagination li a{text-decoration:none;color:#000;float:left;padding:8px 16px;transition:background-color .3s;}
+.ersel-pagination li a:hover,.ersel-pagination li a:focus{background-color:#ddd;}
+.ersel-form{padding:16px}.ersel-grup,.ersel-input-grup{position:relative;margin-top:30px;margin-bottom:30px}
+.ersel-input{padding:8px;display:block;border:none;border-bottom:1px solid #808080;width:100%}
+.ersel-label{position:absolute;top:-22px;left:0;color:black}
+.ersel-select{background-color:transparent;padding:4px 0;width:100%;color:#000;border:1px solid transparent;border-bottom: 1px solid #009688}
+.ersel-select select:focus{color:#000;border:1px solid #009688}.ersel-select option[disabled]{color:#009688}
+
+.ersel-checkbox:before,.ersel-checkbox:after,.ersel-checkbox,.ersel-checkmark:before,.ersel-checkmark:after,.ersel-checkmark{box-sizing:border-box}
+.ersel-checkbox{display:inline-block;line-height:24px;margin:8px 0}
+.ersel-checkbox input[type=checkbox],.ersel-checkbox input[type=radio]{display:none}
+.ersel-checkbox input[type=checkbox]:checked + .ersel-checkmark:before{background:#009688}
+.ersel-checkbox input[type=checkbox]:checked + .ersel-checkmark:after{opacity:1}
+.ersel-checkbox input[type=radio]:checked + .ersel-checkmark:before{background:#fff}
+.ersel-checkbox input[type=radio]:checked + .ersel-checkmark:after{opacity:1;background-color:#009688}
+.ersel-checkmark:before{content:'';position:absolute;width:24px;height:24px;border:2px solid #009688}
+.ersel-checkmark{position:relative;display:inline-block;vertical-align:top;cursor:pointer;width:24px;height:24px}
+.ersel-checkmark:after{content:'';position:absolute;top:7px;left:6px;width:14px;height:8px;border:4px solid #fff;border-top:none;border-right:none;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+.ersel-checkbox input[type=radio] + .ersel-checkmark:before{border-radius:50%;background-color:#fff}
+.ersel-checkbox input[type=radio] + .ersel-checkmark:after{content:'';position:absolute;top:6px;left:6px;width:12px;height:12px;border:0 solid #fff;border-radius:50%}
+.ersel-checkbox input[type=checkbox]:disabled + .ersel-checkmark{opacity:0.3;cursor:default}
+.ersel-checkbox input[type=radio]:disabled + .ersel-checkmark{opacity:0.3;cursor:default}
+
+input[type=checkbox].ersel-check,input[type=radio].ersel-radio{width:24px;height:24px;position:relative;top:6px;}
+input[type=checkbox].ersel-check:checked+.ersel-validate,input[type=radio].ersel-radio:checked+.ersel-validate{color:#009688} 
+input[type=checkbox].ersel-check:disabled+.ersel-validate,input[type=radio].ersel-radio:disabled+.ersel-validate{color:#aaa}
+.ersel-responsive{overflow-x:auto}
+.ersel-icerik:after,.ersel-row:after,.ersel-row-padding:after,.ersel-yatay-menu:after,.ersel-clear:after,.ersel-button-grup:before,.ersel-button-grup:after{content:"";display:table;clear:both}
+.ersel-col,.ersel-half,.ersel-third,.ersel-twothird,.ersel-quarter{float:left;width:100%}
+.ersel-col.s1{width:8.33333%}
+.ersel-col.s2{width:16.66666%}
+.ersel-col.s3{width:24.99999%}
+.ersel-col.s4{width:33.33333%}
+.ersel-col.s5{width:41.66666%}
+.ersel-col.s6{width:49.99999%}
+.ersel-col.s7{width:58.33333%}
+.ersel-col.s8{width:66.66666%}
+.ersel-col.s9{width:74.99999%}
+.ersel-col.s10{width:83.33333%}
+.ersel-col.s11{width:91.66666%}
+.ersel-col.s12,.ersel-half,.ersel-third,.ersel-twothird,.ersel-quarter{width:99.99999%}
+@media only screen and (min-width:601px){
+.ersel-col.m1{width:8.33333%}
+.ersel-col.m2{width:16.66666%}
+.ersel-col.m3,.ersel-quarter{width:24.99999%}
+.ersel-col.m4,.ersel-third{width:33.33333%}
+.ersel-col.m5{width:41.66666%}
+.ersel-col.m6,.ersel-half{width:49.99999%}
+.ersel-col.m7{width:58.33333%}
+.ersel-col.m8,.ersel-twothird{width:66.66666%}
+.ersel-col.m9{width:74.99999%}
+.ersel-col.m10{width:83.33333%}
+.ersel-col.m11{width:91.66666%}
+.ersel-col.m12{width:99.99999%}}
+@media only screen and (min-width:993px){
+.ersel-col.l1{width:8.33333%}
+.ersel-col.l2{width:16.66666%}
+.ersel-col.l3,.ersel-quarter{width:24.99999%}
+.ersel-col.l4,.ersel-third{width:33.33333%}
+.ersel-col.l5{width:41.66666%}
+.ersel-col.l6,.ersel-half{width:49.99999%}
+.ersel-col.l7{width:58.33333%}
+.ersel-col.l8,.ersel-twothird{width:66.66666%}
+.ersel-col.l9{width:74.99999%}
+.ersel-col.l10{width:83.33333%}
+.ersel-col.l11{width:91.66666%}
+.ersel-col.l12{width:99.99999%}}
+.ersel-content{max-width:980px;margin:auto}
+.ersel-rest{overflow:hidden}
+@media (max-width:601px){.ersel-modal-icerik{width:250px !important}}
+@media (max-width:768px){.ersel-modal-icerik{width:300px}}
+@media (min-width:992px){.ersel-modal-icerik{width:400px}}
+@media screen and (max-width:601px){.ersel-yatay-menu a{display:block}.ersel-yatay-menu a:first-child{padding:0 8px}}	
+@media screen and (max-width:601px){.ersel-yatay-menu{text-align:center}}
+@media (max-width:601px){.ersel-hide-kucuk{display:none !important;}}
+@media (max-width:991px) and (min-width:601px){.ersel-hide-orta{display:none !important;}}
+@media (min-width:992px){.ersel-hide-genis{display:none !important;}}
+.ersel-ustte,.ersel-altta{position:fixed;width:100%;z-index:1}.ersel-ustte{top:0}.ersel-altta{bottom:0}
+.ersel-solda{float:left !important}.ersel-sagda{float:right !important}
+.ersel-gizle{display:none !important}.ersel-goster{display:block !important}
+.ersel-minik{font-size:10px !important}
+.ersel-kucuk{font-size:12px !important}
+.ersel-orta{font-size:15px !important}
+.ersel-genis{font-size:18px !important}
+.ersel-xgenis{font-size:24px !important}
+.ersel-xxgenis{font-size:36px !important}
+.ersel-xxxgenis{font-size:48px !important}
+.ersel-dar{font-family:"Segoe UI",Arial,sans-serif !important}
+.ersel-genis{font-family:"Segoe UI",Arial,sans-serif !important;letter-spacing:4px}
+.ersel-dev{font-size:64px !important}
+.ersel-sola-align{text-align:left !important}.ersel-sagda-align{text-align:right !important}
+.ersel-ayarli{text-align:justify !important}
+.ersel-ortada{text-align:center !important}
+.ersel-cember{border-radius:50% !important}
+.ersel-daire-kucuk{border-radius:2px !important}.ersel-daire,.ersel-daire-orta{border-radius:4px !important}
+.ersel-daire-genis{border-radius:8px !important}.ersel-daire-xgenis{border-radius:16px !important}
+.ersel-daire-xxgenis{border-radius:32px !important}.ersel-daire-dev{border-radius:64px !important}
+.ersel-kenar-0{border:0 !important}
+.ersel-kenar{border:1px solid #ccc !important}
+.ersel-kenar-ustten{border-top:1px solid #ccc !important}.ersel-kenar-bottom{border-bottom:1px solid #ccc !important}
+.ersel-kenar-left{border-left:1px solid #ccc !important}.ersel-kenar-right{border-right:1px solid #ccc !important}
+.ersel-bosluk-0{margin:0 !important}
+.ersel-bosluk-2{margin:2px !important}
+.ersel-bosluk-4{margin:4px !important}
+.ersel-bosluk-8{margin:8px !important}
+.ersel-bosluk-12{margin:12px !important}
+.ersel-bosluk-16{margin:16px !important}
+.ersel-bosluk-24{margin:24px !important}
+.ersel-bosluk-32{margin:32px !important}
+.ersel-bosluk-64{margin:64px !important}
+.ersel-bosluk{margin:16px !important}
+.ersel-bosluk-ustten{margin-top:16px !important}.ersel-bosluk-alttan{margin-bottom:16px !important}
+.ersel-bosluk-soldan{margin-left:16px !important}.ersel-bosluk-sagdan{margin-right:16px !important}
+.ersel-aralik-minik{padding:2px 4px !important}
+.ersel-aralik-kucuk{padding:4px 8px !important}
+.ersel-aralik-orta,.ersel-padding{padding:8px 16px !important}
+.ersel-aralik-genis{padding:12px 24px !important}
+.ersel-aralik-xgenis{padding:16px 32px !important}
+.ersel-aralik-xxgenis{padding:24px 48px !important}
+.ersel-aralik-jumbo{padding:32px 64px !important}
+.ersel-aralik-0{padding:0 !important}
+.ersel-aralik-4{padding-top:4px !important;padding-bottom:4px !important}
+.ersel-aralik-8{padding-top:8px !important;padding-bottom:8px !important}
+.ersel-aralik-16{padding-top:16px !important;padding-bottom:16px !important}
+.ersel-aralik-24{padding-top:24px !important;padding-bottom:24px !important}
+.ersel-aralik-32{padding-top:32px !important;padding-bottom:32px !important}
+.ersel-aralik-48{padding-top:48px !important;padding-bottom:48px !important}
+.ersel-aralik-64{padding-top:64px !important;padding-bottom:64px !important}
+.ersel-aralik-ustten{padding-top:8px !important}.ersel-aralik-bottom{padding-bottom:8px !important}
+.ersel-aralik-left{padding-left:16px !important}.ersel-aralik-right{padding-right:16px !important}
+.ersel-row-padding,.ersel-row-padding>.ersel-half,.ersel-row-padding>.ersel-third,.ersel-row-padding>.ersel-twothird,.ersel-row-padding>.ersel-quarter,.ersel-row-padding>.ersel-col{padding:0 8px}
+.ersel-spin{animation:ersel-spin 2s infinite linear;-webkit-animation:ersel-spin 2s infinite linear}
+@-webkit-keyframes ersel-spin{
+0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+100%{-webkit-transform:rotate(359deg);transform:rotate(359deg);}}
+@keyframes ersel-spin{
+0%{-webkit-transform:rotate(0deg);transform: rotate(0deg);}
+100%{-webkit-transform:rotate(359deg);transform:rotate(359deg);}}
+.ersel-icerik{padding:0.01em 16px}
+.ersel-example{background-color:#f1f1f1;padding:0.01em 16px}
+.ersel-section{margin-top:16px;margin-bottom:16px}
+.ersel-code{font-family:Consolas,"courier new";font-size:16px;line-height:1.4;width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #009688;word-wrap:break-word}
+.ersel-example,.ersel-code,.ersel-reference{margin:20px 0}
+.ersel-cerceve{border:1px solid #ccc}
+.ersel-cerceve-2,.ersel-example{box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important}
+.ersel-cerceve-4{box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important}
+.ersel-cerceve-8{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important}
+.ersel-cerceve-12{box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important}
+.ersel-cerceve-16{box-shadow:0 16px 24px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21) !important}
+.ersel-cerceve-24{box-shadow:0 24px 24px 0 rgba(0,0,0,0.2),0 40px 77px 0 rgba(0,0,0,0.22) !important}
+.ersel-animasyon-seffaf{
+-webkit-animation-name:opac;-webkit-animation-duration:4s;animation-name:opac;animation-duration:4s}
+@-webkit-keyframes opac{from{opacity:0} to{opacity:1}}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+/* ÜSTTEN */
+.ersel-animasyon-ustten{
+position:relative;-webkit-animation-name:animatetop;-webkit-animation-duration:0.4s;animation-name:animatetop;animation-duration:0.4s}
+@-webkit-keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+/* SOLDAN */
+.ersel-animasyon-soldan{
+position:relative;-webkit-animation-name:animateleft;-webkit-animation-duration:0.4s;animation-name:animateleft;animation-duration:0.4s}
+@-webkit-keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+/* SAGDAN */
+.ersel-animasyon-sagdan{
+position:relative;-webkit-animation-name:animateright;-webkit-animation-duration:0.4s;animation-name:animateright;animation-duration:0.4s}
+@-webkit-keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+/* ALTTAN */
+.ersel-animasyon-alttan{
+position:relative;-webkit-animation-name:animatebottom;-webkit-animation-duration:0.4s;animation-name:animatebottom;animation-duration:0.4s}
+@-webkit-keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0px;opacity:1}}
+@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+/* RENKLER */
+.ersel-yazi-amber{color:#ffc107 !important}.ersel-amber{color:#000 !important;background-color:#ffc107 !important}
+.ersel-yazi-deniz{color:#00ffff !important}.ersel-arka-deniz{color:#000 !important;background-color:#00ffff !important}
+.ersel-yazi-mavi{color:#2196F3 !important}.ersel-arka-mavi{color:#fff !important;background-color:#2196F3 !important}
+.ersel-yazi-acik-mavi{color:#87CEEB !important}.ersel-arka-acik-mavi{color:#000 !important;background-color:#87CEEB !important}
+.ersel-yazi-kahve{color:#795548 !important}.ersel-arka-kahve{color:#fff !important;background-color:#795548 !important}
+.ersel-yazi-cyan{color:#00bcd4 !important}.ersel-cyan{color:#000 !important;background-color:#00bcd4 !important}
+.ersel-yazi-mavi-gri{color:#607d8b !important}.ersel-arka-mavi-gri{color:#fff !important;background-color:#607d8b !important}
+.ersel-yazi-yesil{color:#4CAF50 !important}.ersel-arka-yesil{color:#fff !important;background-color:#4CAF50 !important}
+.ersel-yazi-acik-yesil{color:#8bc34a !important}.ersel-arka-acik-yesil{color:#000 !important;background-color:#8bc34a !important}
+.ersel-yazi-indigo{color:#3f51b5 !important}.ersel-indigo{color:#fff !important;background-color:#3f51b5 !important}
+.ersel-yazi-khaki{color:#b4aa50 !important}.ersel-khaki{color:#000 !important;background-color:#f0e68c !important}
+.ersel-yazi-lime{color:#cddc39 !important}.ersel-lime{color:#000 !important;background-color:#cddc39 !important}
+.ersel-yazi-portakal{color:#ff9800 !important}.ersel-arka-portakal{color:#000 !important;background-color:#ff9800 !important}
+.ersel-yazi-koyu-portakal{color:#ff5722 !important}.ersel-arka-koyu-portakal{color:#fff !important;background-color:#ff5722 !important}
+.ersel-yazi-pembe{color:#e91e63 !important}.ersel-arka-pembe{color:#fff !important;background-color:#e91e63 !important}
+.ersel-yazi-mor{color:#9c27b0 !important}.ersel-arka-mor{color:#fff !important;background-color:#9c27b0 !important}
+.ersel-yazi-koyu-mor{color:#673ab7 !important}.ersel-arka-koyu-mor{color:#fff !important;background-color:#673ab7 !important}
+.ersel-yazi-kirmizi{color:#f44336 !important}.ersel-arka-kirmizi{color:#fff !important;background-color:#f44336 !important}
+.ersel-yazi-kum{color:#fdf5e6 !important}.ersel-arka-kum{color:#000 !important;background-color:#fdf5e6 !important}
+.ersel-yazi-teal{color:#009688 !important}.ersel-arka-teal{color:#fff !important;background-color:#009688 !important}
+.ersel-yazi-sari{color:#d2be0e !important}.ersel-arka-sari{color:#000 !important;background-color:#ffeb3b !important}
+.ersel-yazi-beyaz{color:#fff !important}.ersel-arka-beyaz{color:#000 !important;background-color:#fff !important}
+.ersel-yazi-siyah{color:#000 !important}.ersel-arka-siyah{color:#fff !important;background-color:#000 !important}
+.ersel-yazi-gri{color:#757575 !important}.ersel-arka-gri{color:#000 !important;background-color:#9e9e9e !important}
+.ersel-yazi-acik-gri{color:#f1f1f1 !important}.ersel-arka-acik-gri{color:#000;background-color:#f1f1f1 !important}
+.ersel-yazi-koyu-gri{color:#3a3a3a !important}.ersel-arka-koyu-gri{color:#000;background-color:#616161 !important}
+.ersel-yazi-beyaz-seffaf{color:rgba(255,255,255,0.65) !important}.ersel-arka-seffaf{color:white;background-color:rgba(0,0,0,0.90) !important}
+.ersel-yazi-siyah-seffaf{color:rgba(0,0,0,0.60) !important}
+.ersel-yazi-golgeli{text-shadow:1px 1px 1px #444;letter-spacing:1px}
+.highlight-white 
+{
+    -webkit-box-shadow: inset 0 0 0 100px rgba(255,255,0,0.5);
+    -moz-box-shadow: inset 0 0 0 100px rgba(255,255,0,0.5);
+    box-shadow: inset 0 0 0 100px rgba(255,255,0,0.5); 
+}      
+.ersel-yanip-sonen {
+  animation: blink 1s steps(3, start) infinite;
+  -webkit-animation: blink 1s steps(3, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+.bas-icerik { background:#000; color:white; height:45px; left:0; position:fixed; width:100%; top:0;}
+.bas{ line-height:45px; margin:0 auto; margin-left:10px; width:100%; }
+ 
+/* CSS for the content of page. I am giving top and bottom padding of 80px to make sure the header and footer do not overlap the content.*/
+.icerik {color:white; margin:0 auto; overflow:auto; padding:50px 0; width:100%; text-align: center;}
+
+ 
+/* Make Footer Sticky */
+.ayak-icerik { background:#9e9e9e; height:38px; left:0; position:fixed; width:100%; bottom:0; }
+.ayak { line-height:24px; margin:0 auto; width:100%;}
+
+.akordeon, .akordeon * {
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+}
+ 
+.akordeon {
+    overflow:hidden;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+    border-radius:3px;
+    background:#9e9e9e !important;
+}
+ 
+.akordeon-bolum-baslik {
+    width:100%;
+    padding:15px;
+    display:inline-block;
+    border-bottom:1px solid #616161;
+    background:#ccc !important;
+    transition:all linear 0.15s;
+    /* Type */
+    font-size:1.200em;
+    text-shadow:0px 1px 1px #616161 !important;
+    color:white;
+}
+ 
+.akordeon-bolum-baslik.aktif, .akordeon-bolum-baslik:hover {
+    background:black !important;
+    /* Type */
+    text-decoration:none;
+}
+
+.akordeon-bolum:last-child .akordeon-bolum-baslik {
+    border-bottom:none;
+}
+ 
+.akordeon-bolum-icerik {
+    padding:10px;
+    display:none;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+
+.sabitbutton {
+    position: fixed;
+    top: 6px;
+    left: 5px;
+}
+
+.pgn:link {
+    color:black;
+    background-color: transparent;
+    text-decoration: none;
+}
+.pgn:hover {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+#pgn {
+    color:black;
+    position: fixed;
+    padding: 0 4px 0 4px;
+    left:1px;
+    right:2px;
+    height: 56px;
+    bottom: 42px;
+    overflow-y: auto;
+    background: grey;
+}
+.flag {
+  background:url(/img/icons/flags.png) 0 0 no-repeat;
+  display:inline-block;
+  height:12px;
+  overflow:hidden;
+  width:18px;
+  position:relative;
+  top: 1px;
+  left:1px;
+  
+}
+
+.flag.xx { top:2px; }
+.flag.ad { background-position:0 0; }
+.flag.ae { background-position:0 -21px; }
+.flag.af { background-position:0 -42px; }
+.flag.ag { background-position:0 -63px; }
+.flag.ai { background-position:0 -84px; }
+.flag.al { background-position:0 -105px; }
+.flag.am { background-position:0 -126px; }
+.flag.an { background-position:0 -147px; }
+.flag.ao { background-position:0 -168px; }
+.flag.ar { background-position:0 -189px; }
+.flag.as { background-position:0 -210px; }
+.flag.at { background-position:0 -231px; }
+.flag.au { background-position:0 -252px; }
+.flag.aw { background-position:0 -273px; }
+.flag.ax { background-position:0 -294px; }
+.flag.az { background-position:0 -315px; }
+.flag.ba { background-position:0 -336px; }
+.flag.bb { background-position:0 -357px; }
+.flag.bd { background-position:0 -378px; }
+.flag.be { background-position:0 -399px; }
+.flag.bf { background-position:0 -420px; }
+.flag.bg { background-position:0 -441px; }
+.flag.bh { background-position:0 -462px; }
+.flag.bi { background-position:0 -483px; }
+.flag.bj { background-position:0 -504px; }
+.flag.bm { background-position:0 -525px; }
+.flag.bn { background-position:0 -546px; }
+.flag.bo { background-position:0 -567px; }
+.flag.bq { background-position:0 -588px; }
+.flag.br { background-position:0 -609px; }
+.flag.bs { background-position:0 -630px; }
+.flag.bt { background-position:0 -651px; }
+.flag.bv { background-position:0 -672px; }
+.flag.bw { background-position:0 -693px; }
+.flag.by { background-position:0 -714px; }
+.flag.bz { background-position:0 -735px; }
+.flag.ca { background-position:0 -756px; }
+.flag.cc { background-position:0 -777px; }
+.flag.cd { background-position:0 -798px; }
+.flag.cf { background-position:0 -819px; }
+.flag.cg { background-position:0 -840px; }
+.flag.ch { background-position:0 -861px; }
+.flag.ci { background-position:0 -882px; }
+.flag.ck { background-position:0 -903px; }
+.flag.cl { background-position:0 -924px; }
+.flag.cm { background-position:0 -945px; }
+.flag.cn { background-position:0 -966px; }
+.flag.co { background-position:0 -987px; }
+.flag.cr { background-position:0 -1008px; }
+.flag.cs { background-position:0 -1029px; }
+.flag.ct { background-position:0 -1050px; }
+.flag.cu { background-position:0 -1071px; }
+.flag.cv { background-position:0 -1092px; }
+.flag.cx { background-position:0 -1113px; }
+.flag.cy { background-position:0 -1134px; }
+.flag.cz { background-position:0 -1155px; }
+.flag.de { background-position:0 -1176px; }
+.flag.dj { background-position:0 -1197px; }
+.flag.dk { background-position:0 -1218px; }
+.flag.dm { background-position:0 -1239px; }
+.flag.do { background-position:0 -1260px; }
+.flag.dz { background-position:0 -1281px; }
+.flag.ec { background-position:0 -1302px; }
+.flag.ee { background-position:0 -1323px; }
+.flag.eg { background-position:0 -1344px; }
+.flag.eh { background-position:0 -1365px; }
+.flag.en { background-position:0 -1386px; }
+.flag.england { background-position:0 -1407px; }
+.flag.er { background-position:0 -1428px; }
+.flag.es { background-position:0 -1449px; }
+.flag.et { background-position:0 -1470px; }
+.flag.eu { background-position:0 -1491px; }
+.flag.fam { background-position:0 -1512px; }
+.flag.fi { background-position:0 -1533px; }
+.flag.fj { background-position:0 -1554px; }
+.flag.fk { background-position:0 -1575px; }
+.flag.fm { background-position:0 -1596px; }
+.flag.fo { background-position:0 -1617px; }
+.flag.fr { background-position:0 -1638px; }
+.flag.ga { background-position:0 -1659px; }
+.flag.gb { background-position:0 -1680px; }
+.flag.gc { background-position:0 -1701px; }
+.flag.gd { background-position:0 -1722px; }
+.flag.ge { background-position:0 -1743px; }
+.flag.gg { background-position:0 -1764px; }
+.flag.gh { background-position:0 -1785px; }
+.flag.gi { background-position:0 -1806px; }
+.flag.gl { background-position:0 -1827px; }
+.flag.gm { background-position:0 -1848px; }
+.flag.gn { background-position:0 -1869px; }
+.flag.gp { background-position:0 -1890px; }
+.flag.gq { background-position:0 -1911px; }
+.flag.gr { background-position:0 -1932px; }
+.flag.gs { background-position:0 -1953px; }
+.flag.gt { background-position:0 -1974px; }
+.flag.gu { background-position:0 -1995px; }
+.flag.gw { background-position:0 -2016px; }
+.flag.gy { background-position:0 -2037px; }
+.flag.hk { background-position:0 -2058px; }
+.flag.hn { background-position:0 -2079px; }
+.flag.hr { background-position:0 -2100px; }
+.flag.ht { background-position:0 -2121px; }
+.flag.hu { background-position:0 -2142px; }
+.flag.id { background-position:0 -2163px; }
+.flag.ie { background-position:0 -2184px; }
+.flag.il { background-position:0 -2205px; }
+.flag.im { background-position:0 -2226px; }
+.flag.in { background-position:0 -2247px; }
+.flag.io { background-position:0 -2268px; }
+.flag.iq { background-position:0 -2289px; }
+.flag.ir { background-position:0 -2310px; }
+.flag.is { background-position:0 -2331px; }
+.flag.it { background-position:0 -2352px; }
+.flag.je { background-position:0 -2373px; }
+.flag.jm { background-position:0 -2394px; }
+.flag.jo { background-position:0 -2415px; }
+.flag.jp { background-position:0 -2436px; }
+.flag.ke { background-position:0 -2457px; }
+.flag.kg { background-position:0 -2478px; }
+.flag.kh { background-position:0 -2499px; }
+.flag.ki { background-position:0 -2520px; }
+.flag.km { background-position:0 -2541px; }
+.flag.kn { background-position:0 -2562px; }
+.flag.ko { background-position:0 -2583px; }
+.flag.kp { background-position:0 -2604px; }
+.flag.kr { background-position:0 -2625px; }
+.flag.kw { background-position:0 -2646px; }
+.flag.ky { background-position:0 -2667px; }
+.flag.kz { background-position:0 -2688px; }
+.flag.la { background-position:0 -2709px; }
+.flag.lb { background-position:0 -2730px; }
+.flag.lc { background-position:0 -2751px; }
+.flag.li { background-position:0 -2772px; }
+.flag.lk { background-position:0 -2793px; }
+.flag.lr { background-position:0 -2814px; }
+.flag.ls { background-position:0 -2835px; }
+.flag.lt { background-position:0 -2856px; }
+.flag.lu { background-position:0 -2877px; }
+.flag.lv { background-position:0 -2898px; }
+.flag.ly { background-position:0 -2919px; }
+.flag.ma { background-position:0 -2940px; }
+.flag.mc { background-position:0 -2961px; }
+.flag.md { background-position:0 -2982px; }
+.flag.me { background-position:0 -3003px; }
+.flag.mg { background-position:0 -3024px; }
+.flag.mh { background-position:0 -3045px; }
+.flag.mk { background-position:0 -3066px; }
+.flag.ml { background-position:0 -3087px; }
+.flag.mm { background-position:0 -3108px; }
+.flag.mn { background-position:0 -3129px; }
+.flag.mo { background-position:0 -3150px; }
+.flag.mp { background-position:0 -3171px; }
+.flag.mq { background-position:0 -3192px; }
+.flag.mr { background-position:0 -3213px; }
+.flag.ms { background-position:0 -3234px; }
+.flag.mt { background-position:0 -3255px; }
+.flag.mu { background-position:0 -3276px; }
+.flag.mv { background-position:0 -3297px; }
+.flag.mw { background-position:0 -3318px; }
+.flag.mx { background-position:0 -3339px; }
+.flag.my { background-position:0 -3360px; }
+.flag.mz { background-position:0 -3381px; }
+.flag.na { background-position:0 -3402px; }
+.flag.nc { background-position:0 -3423px; }
+.flag.ne { background-position:0 -3444px; }
+.flag.nf { background-position:0 -3465px; }
+.flag.ng { background-position:0 -3486px; }
+.flag.ni { background-position:0 -3507px; }
+.flag.nl { background-position:0 -3528px; }
+.flag.no { background-position:0 -3549px; }
+.flag.np { background-position:0 -3570px; }
+.flag.nr { background-position:0 -3591px; }
+.flag.nu { background-position:0 -3612px; }
+.flag.nz { background-position:0 -3633px; }
+.flag.om { background-position:0 -3654px; }
+.flag.pa { background-position:0 -3675px; }
+.flag.pe { background-position:0 -3696px; }
+.flag.pf { background-position:0 -3717px; }
+.flag.pg { background-position:0 -3738px; }
+.flag.ph { background-position:0 -3759px; }
+.flag.pk { background-position:0 -3780px; }
+.flag.pl { background-position:0 -3801px; }
+.flag.pm { background-position:0 -3822px; }
+.flag.pn { background-position:0 -3843px; }
+.flag.pr { background-position:0 -3864px; }
+.flag.ps { background-position:0 -3885px; }
+.flag.pt { background-position:0 -3906px; }
+.flag.pw { background-position:0 -3927px; }
+.flag.py { background-position:0 -3948px; }
+.flag.qa { background-position:0 -3969px; }
+.flag.ro { background-position:0 -3990px; }
+.flag.rs { background-position:0 -4011px; }
+.flag.ru { background-position:0 -4032px; }
+.flag.rw { background-position:0 -4053px; }
+.flag.sa { background-position:0 -4074px; }
+.flag.sb { background-position:0 -4095px; }
+.flag.sc { background-position:0 -4116px; }
+.flag.scotland { background-position:0 -4137px; }
+.flag.sd { background-position:0 -4158px; }
+.flag.se { background-position:0 -4179px; }
+.flag.sg { background-position:0 -4200px; }
+.flag.sh { background-position:0 -4221px; }
+.flag.si { background-position:0 -4242px; }
+.flag.sk { background-position:0 -4263px; }
+.flag.sl { background-position:0 -4284px; }
+.flag.sm { background-position:0 -4305px; }
+.flag.sn { background-position:0 -4326px; }
+.flag.so { background-position:0 -4347px; }
+.flag.sr { background-position:0 -4368px; }
+.flag.ss { background-position:0 -4389px; }
+.flag.st { background-position:0 -4410px; }
+.flag.sv { background-position:0 -4431px; }
+.flag.sx { background-position:0 -4452px; }
+.flag.sy { background-position:0 -4473px; }
+.flag.sz { background-position:0 -4494px; }
+.flag.tc { background-position:0 -4515px; }
+.flag.td { background-position:0 -4536px; }
+.flag.tf { background-position:0 -4557px; }
+.flag.tg { background-position:0 -4578px; }
+.flag.th { background-position:0 -4599px; }
+.flag.tj { background-position:0 -4620px; }
+.flag.tk { background-position:0 -4641px; }
+.flag.tl { background-position:0 -4662px; }
+.flag.tm { background-position:0 -4683px; }
+.flag.tn { background-position:0 -4704px; }
+.flag.to { background-position:0 -4725px; }
+.flag.tr { background-position:0 -4746px; }
+.flag.tt { background-position:0 -4767px; }
+.flag.tv { background-position:0 -4788px; }
+.flag.tw { background-position:0 -4809px; }
+.flag.tz { background-position:0 -4830px; }
+.flag.ua { background-position:0 -4851px; }
+.flag.ug { background-position:0 -4872px; }
+.flag.um { background-position:0 -4893px; }
+.flag.us { background-position:0 -4914px; }
+.flag.uy { background-position:0 -4935px; }
+.flag.uz { background-position:0 -4956px; }
+.flag.va { background-position:0 -4977px; }
+.flag.vc { background-position:0 -4998px; }
+.flag.ve { background-position:0 -5019px; }
+.flag.vg { background-position:0 -5040px; }
+.flag.vi { background-position:0 -5061px; }
+.flag.vn { background-position:0 -5082px; }
+.flag.vu { background-position:0 -5103px; }
+.flag.wales { background-position:0 -5124px; }
+.flag.wf { background-position:0 -5145px; }
+.flag.wl { background-position:0 -5166px; }
+.flag.ws { background-position:0 -5187px; }
+.flag.xx {
+  background-position:0 -5208px;
+  height:16px;
+}
+.flag.ye { background-position:0 -5234px; }
+.flag.yt { background-position:0 -5255px; }
+.flag.yu { background-position:0 -5276px; }
+.flag.za { background-position:0 -5297px; }
+.flag.zm { background-position:0 -5318px; }
+.flag.zw { background-position:0 -5339px; }

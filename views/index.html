@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Istanbul Chess</title>
+    <link rel="stylesheet" type="text/css" href="css/chessboard.css" />
+    <link rel="stylesheet" type="text/css" href="css/ersel.css">
+</head>
+<body class="ersel-arka-koyu-gri">
+    
+    <a href="#" class="sabitbutton" onclick="ersel_ac()">
+       <img src="img/icons/menu32.png">
+    </a>
+    
+    <div id="terfi" class="ersel-icerik ersel-arka-siyah" style="display:none;" >
+        <div class="ersel-ortada ersel-kucuk ersel-aralik-4 ersel-yazi-beyaz">
+            <span dilsoz="terfi" class="ersel-kucuk ersel-yazi-golgeli" style="display: inline-block;width: 60px;text-align:right"></span>
+            <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga" id="q" onclick="tasayarla('Vezir')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wQ.svg"></a>
+            <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="r" onclick="tasayarla('Kale')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wR.svg"></a>
+            <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="b" onclick="tasayarla('Fil')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wB.svg"></a>
+            <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="n" onclick="tasayarla('At')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wN.svg"></a>
+            <span class="ersel-kucuk ersel-yazi-golgeli" id="tastipi" style="display: inline-block;width: 60px;;text-align:left">Vezir</span>
+        </div>
+    </div> 
+    <div id="baslik" class="ersel-icerik ersel-arka-siyah">
+        <div style="margin-left:30px;height:45px;" class="ersel-solda"> 
+            <div class="ersel-solda"> 
+                <span style="font-size:24pt"><b>Istanbul Chess</b></span>
+            </div>    
+        </div>    
+    </div>
+   
+    <div class="ersel-dikey-menu ersel-animasyon-soldan ersel-daire"  style="display:none;margin:0;">
+        <span style="width:100%;border-bottom:1px solid #1a1a1a;" onclick="ersel_kapat()" class="ersel-button ersel-daire ersel-arka-gri"><img class="ersel-sagda ersel-aralik-8" src="img/icons/kapat24.png"></span>       
+        
+    
+        <div class="akordeon">
+            
+                <div class="akordeon-bolum">
+                    <a dilsoz="canlioyun" class="akordeon-bolum-baslik" href="#akordeon-oyun">
+                        <img class="ersel-sagda" style="width:24px;height:24px" src="img/icons/kiliclar.png">
+                    </a>
+                    <div id="akordeon-oyun" class="akordeon-bolum-icerik">
+                        <div class="ersel-row ersel-orta">    
+                            <div style="width:49%;text-align:right;" class="ersel-col">
+                                <span dilsoz="oyuntercihi"></span>
+                            </div>
+                            <div style="width:2%;text-align:left;" class="ersel-col">
+                                <span>|</span>
+                            </div>
+                            <div style="width:49%;text-align:left;" class="ersel-col">
+                                <span dilsoz="renktercihi"></span>
+                            </div>
+                        </div>    
+                        <div class="ersel-row ersel-orta">    
+                            <div style="width:50%;text-align:right;" class="ersel-col">
+                                <select id="oyun_tipi">
+                                    <option dilsoz="1dk|2sn" value="1|2"> </option>
+                                    <option dilsoz="3dk|2sn" value="3|2"> </option>
+                                    <option dilsoz="5dk|2sn" value="5|2"> </option>
+                                    <option dilsoz="10dk|5sn" value="10|5"></option>
+                                    <option dilsoz="15dk|5sn" value="15|5"></option>
+                                    <option dilsoz="25dk|10sn" value="25|10"></option>
+                                    <option dilsoz="30dk|10sn" value="30|10"></option>
+                                    <option dilsoz="45dk|10sn" value="45|10"></option>
+                                </select>    
+                            </div>
+                            <div style="width:50%;text-align:left;" class="ersel-col">
+                                <select id="oyun_rengi">
+                                    <option dilsoz="beyaz" value="b"></option>
+                                    <option dilsoz="siyah" value="s"></option>
+                                    <option dilsoz="rastgele" value="r"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ersel-row ersel-orta">    
+                            <div style="width:50%;text-align:right;" class="ersel-col">
+                                <span>
+                                    Min
+                                    <input style="width:40%" placeholder="-50">
+                                </span>
+                            </div>    
+                            <div style="width:50%;text-align:left;" class="ersel-col">
+                                <span> 
+                                    <input style="width:40%" placeholder="+50">
+                                    Max
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ersel-row ersel-orta ersel-ortada ersel-bosluk-4">    
+                            <button dilsoz="oyunkur" class="ersel-button ersel-daire ersel-dalga" onclick="oyun_kur()"></button>
+                        </div>    
+                        <div class="ersel-row ersel-kucuk">
+                            <table class="ersel-table-all ersel-arka-acik-gri">
+                                <thead>
+                                    <tr class="ersel-arka-koyu-gri ersel-yazi-golgeli ersel-yazi-beyaz">
+                                        
+                                        <th dilsoz="kullanici"></th>
+                                        <th dilsoz="puan"></th>
+                                    
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="oyuncular">    
+                                </tbody>            
+                            </table>    
+                        </div>                   
+                    </div>
+                </div>
+            
+                <div class="akordeon-bolum">
+                    <a dilsoz="calisma" class="akordeon-bolum-baslik" href="#akordeon-calisma">
+                         <img class="ersel-sagda" style="width:24px;height:24px" src="img/icons/universite24.png">
+                    </a>
+                    <div id="akordeon-calisma" class="akordeon-bolum-icerik">
+                        <a href="javascript:void(0)" onclick="">Şah ve Mat<img  class="ersel-sagda" src="img/icons/login24.png" width="24" height="24"></a>
+                        <a href="javascript:void(0)" onclick="">En İyi Hamle<img  class="ersel-sagda" src="img/icons/login24.png" width="24" height="24"></a>
+                        <a href="javascript:void(0)" onclick="">En İyi Devamyolu<img  class="ersel-sagda" src="img/icons/login24.png" width="24" height="24"></a>
+                    </div>
+                </div>
+            
+            <div class="akordeon-bolum">
+                <a dilsoz="tahtasecimi" class="akordeon-bolum-baslik ersel-yazi-golgeli" href="#akordeon-tahta">
+                    <img class="ersel-sagda" style="width:24px;height:24px" src="img/icons/masa24.png">
+                </a>
+                <div id="akordeon-tahta" class="akordeon-bolum-icerik">
+                    <div class="ersel-icerik ersel-arka-gri">
+                        <div id="masa" class="ersel-ortada ersel-kucuk">
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m0" onclick="masasec(0)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/0B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/0S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m1" onclick="masasec(1)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/1B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/1S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m2" onclick="masasec(2)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/2B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/2S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m3" onclick="masasec(3)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/3B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/3S.bmp">
+                            </a>
+                           
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m4" onclick="masasec(4)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/4B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/4S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m5" onclick="masasec(5)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/5B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/5S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m6" onclick="masasec(6)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/6B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/6S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m7" onclick="masasec(7)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/7B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/7S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m8" onclick="masasec(8)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/8B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/8S.bmp">
+                            </a>
+                            <a style="width:80px;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="m9" onclick="masasec(9)">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/9B.bmp">
+                                <img style="width:32px;height:32px" src="img/yuzeyler/9S.bmp">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="akordeon-bolum">
+                <a dilsoz="tassecimi" class="akordeon-bolum-baslik ersel-yazi-golgeli" href="#akordeon-tas">
+                    <img class="ersel-sagda" style="width:24px;height:24px" src="img/icons/at24.png">
+                </a>
+                <div id="akordeon-tas" class="akordeon-bolum-icerik">
+                    <div class="ersel-icerik">
+                        <div id="tas" class="ersel-ortada">
+                            <a style="width:100%;padding:4px;" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="t0" onclick="tassec(0)">
+                                <span class="ersel-yazi-golgeli" style="display: inline-block;width: 50px">Alpha</span>
+                                <img style="width:24px;height:27px" src="img/chesspieces/alpha/wP.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/alpha/wN.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/alpha/wB.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/alpha/wR.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/alpha/wQ.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/alpha/wK.png">
+                            </a>
+                            <a style="width:100%;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="t1" onclick="tassec(1)">
+                                <span class="ersel-yazi-golgeli" style="display: inline-block;width: 50px">Merida</span>
+                                <img style="width:24px;height:27px" src="img/chesspieces/merida/wP.svg">
+                                <img style="width:24px;height:27px" src="img/chesspieces/merida/wN.svg">
+                                <img style="width:24px;height:27px" src="img/chesspieces/merida/wB.svg">
+                                <img style="width:24px;height:27px" src="img/chesspieces/merida/wR.svg">
+                                <img style="width:24px;height:27px" src="img/chesspieces/merida/wQ.svg">
+                                <img style="width:24px;height:27px" src="img/chesspieces/merida/wK.svg">
+                            </a>
+                            <a style="width:100%;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="t2" onclick="tassec(2)">
+                                <span class="ersel-yazi-golgeli" style="display: inline-block;width: 50px">Uscf</span>
+                                <img style="width:24px;height:27px" src="img/chesspieces/uscf/wP.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/uscf/wN.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/uscf/wB.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/uscf/wR.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/uscf/wQ.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/uscf/wK.png">
+                            </a>
+                            <a style="width:100%;padding:4px" class="ersel-button ersel-solda ersel-kenar ersel-daire ersel-dalga" id="t3" onclick="tassec(3)">
+                                <span class="ersel-yazi-golgeli" style="display: inline-block;width: 50px">Wiki</span>
+                                <img style="width:24px;height:27px" src="img/chesspieces/wikipedia/wP.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/wikipedia/wN.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/wikipedia/wB.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/wikipedia/wR.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/wikipedia/wQ.png">
+                                <img style="width:24px;height:27px" src="img/chesspieces/wikipedia/wK.png">
+                            </a>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="oyunalani" class="ersel-ortada ersel-aralik-4" style="display:none;" >
+        <div class="ersel-row ersel-ortada ersel-dar ersel-bosluk-2 ersel-aralik-2">
+            <span id="rakipoyuncu" style="padding:0 4px 2px 4px" class="ersel-daire ersel-yazi-golgeli ersel-solda ersel-cerceve-2 ersel-yazi-beyaz ersel-arka-siyah">
+                <span id="rakipflag" class='flag xx' title=''></span>
+                <a href="#" style="text-decoration:none;" id="rakip">---</a>
+            </span>
+            <span id="rakipdetay" style="padding:0 4px 2px 2px" class="ersel-daire ersel-yazi-golgeli ersel-sagda ersel-cerceve-2 ersel-yazi-beyaz ersel-arka-siyah">
+                <svg id="rakipdurum" width="16" height="16"><circle cx="9" cy="11" r="5" fill="red"></circle></svg>
+                <span id="rakipoffsure" class="ersel-yazi-kirmizi">00:00</span> 
+                <span id="rakipsure">00:00</span>
+            </span>    
+        </div>    
+
+        <div class="ersel-ortada ersel-aralik-4" id="board"></div>
+        
+        <div class="ersel-row ersel-ortada ersel-dar ersel-bosluk-ustten ersel-bosluk-2" >
+            <span id="yereloyuncu" style="padding:0 4px 2px 4px" class="ersel-daire ersel-yazi-golgeli ersel-solda ersel-cerceve-2 ersel-yazi-siyah ersel-arka-beyaz">
+                <span id="yerelflag" class='flag xx' title=''></span>
+                <a href="#" style="text-decoration:none;" id="yerel">---</a>
+            </span>
+            <span id="yereldetay" style="padding:0 4px 2px 2px" class="ersel-daire ersel-yazi-golgeli ersel-sagda ersel-cerceve-2 ersel-yazi-siyah ersel-arka-beyaz">
+                <svg id="yereldurum" width="16" height="16"><circle cx="9" cy="11" r="5" fill="red"></circle></svg>
+                <span id="yereloffsure" class="ersel-yazi-kirmizi">00:00</span> 
+                <span id="yerelsure">00:00</span>
+            </span>
+        </div>
+    </div>
+        
+    <div id="pgn" class="ersel-kucuk ersel-kenar ersel-daire"  style="display:none;" >
+        <b>1.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>2.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>3.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>4.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>5.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>6.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>7.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>8.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>9.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>10.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>11.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>12.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>13.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>14.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>15.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>16.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>17.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>18.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>19.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>20.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>21.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>22.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>23.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>24.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>25.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>26.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>27.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>28.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>29.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>30.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+        <b>31.</b><a href="#" class="pgn">e4</a> <a href="#" class="pgn">Nf6</a>
+    </div>    
+        
+    <div class="ayak-icerik">
+        <div id="kumanda" class="ersel-ortada ersel-kucuk ersel-yazi-beyaz" style="height:48px;width:100%;">
+               <span dilsoz="berabere" class="ersel-kucuk ersel-yazi-golgeli" style="display: inline-block;width: 60px;text-align:right"></span>            
+               <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="berabere" onclick="berabere()"><img style="width:34px;height:34px;display:block" src="img/icons/berabere.svg"></a>
+            
+               <!--<a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-koyu-gri" id="onceki" onclick="oncekihamle()"><img style="width:34px;height:34px;display:block" src="img/icons/onceki.png"></a>
+               <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-koyu-gri" id="sonraki" onclick="sonrakihamle()"><img style="width:34px;height:34px;display:block" src="img/icons/sonraki.png"></a>-->
+
+               <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="teslimol" onclick="teslimol()"><img style="width:34px;height:34px;display:block" src="img/icons/bayrak.svg"></a>
+               <span dilsoz="peset" class="ersel-kucuk ersel-yazi-golgeli" style="display: inline-block;width: 60px;;text-align:left"></span>
+        </div>
+    </div>
+    
+    <div id="form_modal" class="ersel-modal" style="display:none;min-height:200px;">
+        <div style="top:30%" class="ersel-modal-icerik ersel-cerceve-8">
+            <div class="ersel-row ersel-arka-siyah">
+                <div class="ersel-col" style="width:90%">
+                    <b><span id="form_modal_baslik" style="width:100%" class="ersel-genis ersel-yazi-golgeli ersel-bosluk-4"></span></b>
+                </div>
+                <div class="ersel-col" style="width:10%">
+                    <a id="form_modal_hedef" href="javascript:void(0)" onclick="form_modal_kapat('/')"><img  class="ersel-kapanan-menu ersel-sagda ersel-bosluk-4" src="img/icons/kapat24.png" width="24" height="24"></a>
+                </div>
+            </div>            
+            
+            <div class="ersel-arka-koyu-gri ersel-ortada">
+                <br>
+                <div style="position: relative;" class="ersel-yazi-beyaz ersel-yazi-golgeli" id="form_modal_mesaj">
+                </div>
+                <br>
+            </div>
+            <div class="ersel-arka-gri ersel-ortada">
+                <b><span style="width:100%" class="ersel-genis ersel-yazi-siyah ersel-yazi-golgeli">Istanbul Chess</span></b>
+            </div>    
+        </div>
+    </div>
+        
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/chess.js"></script>
+    <script type="text/javascript" src="js/chessboard.js"></script>
+    <script type="text/javascript" src="js/islem.js"></script>
+    <script type="text/javascript" src="js/dil.js"></script>  
+         
+</body>
+</html>

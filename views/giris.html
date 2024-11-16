@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Istanbul Chess</title>
+    <link rel="stylesheet" type="text/css" href="css/ersel.css">
+    <link rel="stylesheet" type="text/css" href="css/chessboard.css" />
+</head>
+<body class="ersel-arka-koyu-gri" style="overflow:auto;">
+    <div class="bas-icerik">
+        <div class="bas">
+            <div class="ersel-solda"> 
+                <span style="font-size:24pt"><b>Istanbul Chess</b></span>
+            </div>    
+        </div>    
+    </div>
+    
+    
+    <div id="form_giris" style="width:340px;" class="icerik">
+        <header class="ersel-ortada ersel-genis ersel-yazi-golgeli ersel-bosluk-8">
+            <b dilsoz="uyegiris"></b>
+        </header>
+
+        <div> 
+            <div class="ersel-row">
+                <span class="ersel-ipucu ersel-ortada ersel-yazi-beyaz ersel-kucuk ersel-yanip-sonen" id="hata_msg"></span>
+            </div>
+            
+            <div class="ersel-row">
+                <div class="ersel-col" style="width:30%">      
+                    <span dilsoz="eposta" class="ersel-bosluk-2 ersel-sagda ersel-kucuk ersel-yazi-golgeli"></span>
+                </div>   
+                <div class="ersel-col" style="width:70%" >
+                    <input style="width:80%;text-transform: lowercase" id="eposta" class="ersel-bosluk-2 ersel-yazi-siyah ersel-kucuk ersel-kenar ersel-daire" type="text">
+                </div>
+            </div>        
+                
+            <div class="ersel-row">
+                <div class="ersel-col" style="width:30%">    
+                    <span dilsoz="sifre" class="ersel-bosluk-2 ersel-sagda ersel-kucuk ersel-yazi-golgeli"></span>
+                </div>   
+                <div class="ersel-col" style="width:70%">
+                    <input style="width:80%" id="sifre" class="ersel-yazi-siyah ersel-kucuk ersel-kenar ersel-daire" type="password">
+                </div>
+            </div>   
+          
+            <div id="board_alan" class="icerik">
+                <div class="ersel-ortada ersel-kucuk ersel-aralik-ustten" style="height:48px;width:100%;">
+                    <span dilsoz="terfi" class="ersel-kucuk ersel-yazi-golgeli" style="display: inline-block;width: 60px;text-align:right"></span>
+                    <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga" id="q" onclick="tasayarla('Vezir')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wQ.svg"</img></a>
+                    <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="r" onclick="tasayarla('Kale')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wR.svg"></a>
+                    <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="b" onclick="tasayarla('Fil')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wB.svg"></a>
+                    <a style="width:36px;padding:0 0 6px 0" class="ersel-button ersel-kenar ersel-daire ersel-dalga ersel-arka-gri" id="n" onclick="tasayarla('At')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wN.svg"></a>
+                    <span class="ersel-kucuk ersel-yazi-golgeli" id="tastipi" style="display: inline-block;width: 60px;text-align:left">Vezir</span>
+                </div>
+                
+                <div id="board"></div>
+            </div>
+        </div>
+           
+    </div>
+    <div class="ayak-icerik">
+        <div class="ayak">
+            <div class="ersel-ortada">        
+                <button dilsoz="gonder" class="ersel-button ersel-orta ersel-kenar ersel-daire-genis ersel-dalga" onclick="form_gonder()"></button>
+                <a href="/kayit" dilsoz="uyeol" class="ersel-orta ersel-yazi-siyah ersel-bosluk-soldan"></a>
+                <a href="/hatirlat" dilsoz="sifrehatirlat" class="ersel-orta ersel-yazi-siyah ersel-bosluk-soldan"></a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="form_modal" class="ersel-modal" style="display:none;min-height:200px;">
+        <div style="top:30%" class="ersel-modal-icerik ersel-cerceve-8">
+            <div class="ersel-row ersel-arka-siyah">
+                <div class="ersel-col" style="width:90%">
+                    <b><span id="form_modal_baslik" style="width:100%" class="ersel-genis ersel-yazi-golgeli ersel-bosluk-4"></span></b>
+                </div>
+                <div class="ersel-col" style="width:10%">
+                    <a id="form_modal_hedef" href="javascript:void(0)" onclick="form_modal_kapat('/')"><img  class="ersel-kapanan-menu ersel-sagda ersel-bosluk-4" src="img/icons/kapat24.png" width="24" height="24"></img></a>
+                </div>
+            </div>            
+            
+            <div class="ersel-arka-koyu-gri ersel-ortada">
+                <br>
+                <div style="position: relative;" class="ersel-yazi-beyaz ersel-yazi-golgeli" id="form_modal_mesaj">
+                </div>
+                <br>
+            </div>
+            <div class="ersel-arka-gri ersel-ortada">
+                <b><span style="width:100%" class="ersel-genis ersel-yazi-siyah ersel-yazi-golgeli">Istanbul Chess</span></b>
+            </div>    
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/chessboard_giris.js"></script>
+    <script type="text/javascript" src="js/chess.js"></script>
+    <script type="text/javascript" src="js/giris.js"></script>
+    <script type="text/javascript" src="js/dil.js"></script>
+            
+</body>
+</html>
