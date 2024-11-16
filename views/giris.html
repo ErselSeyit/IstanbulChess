@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Istanbul Chess</title>
+    <link rel="stylesheet" type="text/css" href="css/metin.css">
+    <link rel="stylesheet" type="text/css" href="css/chessboard.css" />
+</head>
+<body class="metin-arka-koyu-gri" style="overflow:auto;">
+    <div class="bas-icerik">
+        <div class="bas">
+            <div class="metin-solda"> 
+                <span style="font-size:24pt"><b>Istanbul Chess</b></span>
+            </div>    
+        </div>    
+    </div>
+    
+    
+    <div id="form_giris" style="width:340px;" class="icerik">
+        <header class="metin-ortada metin-genis metin-yazi-golgeli metin-bosluk-8">
+            <b dilsoz="uyegiris"></b>
+        </header>
+
+        <div> 
+            <div class="metin-row">
+                <span class="metin-ipucu metin-ortada metin-yazi-beyaz metin-kucuk metin-yanip-sonen" id="hata_msg"></span>
+            </div>
+            
+            <div class="metin-row">
+                <div class="metin-col" style="width:30%">      
+                    <span dilsoz="eposta" class="metin-bosluk-2 metin-sagda metin-kucuk metin-yazi-golgeli"></span>
+                </div>   
+                <div class="metin-col" style="width:70%" >
+                    <input style="width:80%;text-transform: lowercase" id="eposta" class="metin-bosluk-2 metin-yazi-siyah metin-kucuk metin-kenar metin-daire" type="text">
+                </div>
+            </div>        
+                
+            <div class="metin-row">
+                <div class="metin-col" style="width:30%">    
+                    <span dilsoz="sifre" class="metin-bosluk-2 metin-sagda metin-kucuk metin-yazi-golgeli"></span>
+                </div>   
+                <div class="metin-col" style="width:70%">
+                    <input style="width:80%" id="sifre" class="metin-yazi-siyah metin-kucuk metin-kenar metin-daire" type="password">
+                </div>
+            </div>   
+          
+            <div id="board_alan" class="icerik">
+                <div class="metin-ortada metin-kucuk metin-aralik-ustten" style="height:48px;width:100%;">
+                    <span dilsoz="terfi" class="metin-kucuk metin-yazi-golgeli" style="display: inline-block;width: 60px;text-align:right"></span>
+                    <a style="width:36px;padding:0 0 6px 0" class="metin-button metin-kenar metin-daire metin-dalga" id="q" onclick="tasayarla('Vezir')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wQ.svg"</img></a>
+                    <a style="width:36px;padding:0 0 6px 0" class="metin-button metin-kenar metin-daire metin-dalga metin-arka-gri" id="r" onclick="tasayarla('Kale')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wR.svg"></a>
+                    <a style="width:36px;padding:0 0 6px 0" class="metin-button metin-kenar metin-daire metin-dalga metin-arka-gri" id="b" onclick="tasayarla('Fil')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wB.svg"></a>
+                    <a style="width:36px;padding:0 0 6px 0" class="metin-button metin-kenar metin-daire metin-dalga metin-arka-gri" id="n" onclick="tasayarla('At')"><img style="width:34px;height:34px;display:block" src="img/chesspieces/merida/wN.svg"></a>
+                    <span class="metin-kucuk metin-yazi-golgeli" id="tastipi" style="display: inline-block;width: 60px;text-align:left">Vezir</span>
+                </div>
+                
+                <div id="board"></div>
+            </div>
+        </div>
+           
+    </div>
+    <div class="ayak-icerik">
+        <div class="ayak">
+            <div class="metin-ortada">        
+                <button dilsoz="gonder" class="metin-button metin-orta metin-kenar metin-daire-genis metin-dalga" onclick="form_gonder()"></button>
+                <a href="/kayit" dilsoz="uyeol" class="metin-orta metin-yazi-siyah metin-bosluk-soldan"></a>
+                <a href="/hatirlat" dilsoz="sifrehatirlat" class="metin-orta metin-yazi-siyah metin-bosluk-soldan"></a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="form_modal" class="metin-modal" style="display:none;min-height:200px;">
+        <div style="top:30%" class="metin-modal-icerik metin-cerceve-8">
+            <div class="metin-row metin-arka-siyah">
+                <div class="metin-col" style="width:90%">
+                    <b><span id="form_modal_baslik" style="width:100%" class="metin-genis metin-yazi-golgeli metin-bosluk-4"></span></b>
+                </div>
+                <div class="metin-col" style="width:10%">
+                    <a id="form_modal_hedef" href="javascript:void(0)" onclick="form_modal_kapat('/')"><img  class="metin-kapanan-menu metin-sagda metin-bosluk-4" src="img/icons/kapat24.png" width="24" height="24"></img></a>
+                </div>
+            </div>            
+            
+            <div class="metin-arka-koyu-gri metin-ortada">
+                <br>
+                <div style="position: relative;" class="metin-yazi-beyaz metin-yazi-golgeli" id="form_modal_mesaj">
+                </div>
+                <br>
+            </div>
+            <div class="metin-arka-gri metin-ortada">
+                <b><span style="width:100%" class="metin-genis metin-yazi-siyah metin-yazi-golgeli">Istanbul Chess</span></b>
+            </div>    
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/chessboard_giris.js"></script>
+    <script type="text/javascript" src="js/chess.js"></script>
+    <script type="text/javascript" src="js/giris.js"></script>
+    <script type="text/javascript" src="js/dil.js"></script>
+            
+</body>
+</html>
